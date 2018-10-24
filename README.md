@@ -1,5 +1,5 @@
 # rum-tester
-Rumbullion test-runner. Basically a wrapper around the ava test-runner
+Rumbullion ES6 test-runner. Basically a wrapper around mocha
 
 ## Install
 I prefer installation per package. But you can also install it global to link the make-rum command systemwide.
