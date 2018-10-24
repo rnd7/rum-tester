@@ -1,7 +1,10 @@
 console.log('@rum-tester index')
 
-const fs = require('fs')
+import Mocha from 'mocha'
+import fs from 'fs'
+import path from 'path'
 
+const mocha = new Mocha();
 const pkg = JSON.parse(fs.readFileSync('./package.json', "utf8"))
 const DEFAULTS = {
   directory: 'test',
@@ -9,15 +12,15 @@ const DEFAULTS = {
 const opts = Object.assign({}, DEFAULTS)
 if (pkg.rum && pkg.rum.tester) Object.assign(opts, pkg.rum.tester)
 
+fs.readdirSync(opts.directory).filter((file) => {
+    return file.substr(-3) === '.js';
+}).forEach(function(file){
+    mocha.addFile(
+        path.join(opts.directory, file)
+    );
+});
 
-const { spawn } = require('child_process');
-const child = spawn('ava', []);
-
-child.stdout.setEncoding('utf8')
-child.stdout.on('data', (chunk) => {
-  process.stdout.write(chunk)
-})
-
-child.stderr.pipe(process.stdout);
-
-child.on('close', (code) => {})
+// Run the tests.
+mocha.run(function(failures){
+  process.exitCode = failures ? 1 : 0;  // exit with non-zero status if there were failures
+});

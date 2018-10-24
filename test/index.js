@@ -1,13 +1,10 @@
-import test from 'ava'
+import assert from 'assert'
 
-test('test sync', t => {
-	t.pass();
-});
-
-test('test async', async t => {
-	const bar = Promise.resolve('bar');
-
-	t.is(await new Promise((resolve, reject) => {
-    setTimeout(() => { resolve(true) }, 500)
-  }), true);
-});
+describe('Rumbullion Tester', () => {
+  it('should fail', () => {
+    assert.equal(true, false)
+  })
+  it('should pass', () => {
+    assert.equal(true, true)
+  })
+})
