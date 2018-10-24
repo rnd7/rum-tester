@@ -1,6 +1,6 @@
 {
   "name": "@rnd7/rum-tester",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Rumbullion ES6 test-runner",
   "main": "dist/rum-tester.js",
   "engines": {
