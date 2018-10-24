@@ -1,0 +1,34 @@
+{
+  "name": "@rnd7/rum-tester",
+  "version": "1.0.18",
+  "description": "Rumbullion ES6 test-runner",
+  "main": "dist/rum-tester.js",
+  "engines": {
+    "node": ">0.11.9"
+  },
+  "bin": {
+    "test-rum": "bin/test-rum.js"
+  },
+  "scripts": {
+    "test": "node bin/test-rum.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnd7/rum-maker.git"
+  },
+  "keywords": [
+    "test",
+    "testrunner",
+    "es6",
+    "es2015"
+  ],
+  "author": "rnd7",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rnd7/rum-maker/issues"
+  },
+  "homepage": "https://github.com/rnd7/rum-maker#readme",
+  "dependencies": {
+    "ava": "^1.0.0-rc.1"
+  }
+}
